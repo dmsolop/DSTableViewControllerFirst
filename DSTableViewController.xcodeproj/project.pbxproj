@@ -15,10 +15,10 @@
 		2CBE306B1EA0C70200589244 /* DSPersonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE30681EA0C70200589244 /* DSPersonTableViewCell.m */; };
 		2CBE306C1EA0C70200589244 /* DSTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE306A1EA0C70200589244 /* DSTableViewCell.m */; };
 		2CBE306F1EA0C85500589244 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE306E1EA0C85500589244 /* MainViewController.m */; };
-		2CBE30D71EA13C2100589244 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE30D61EA13C2100589244 /* ViewController.m */; };
 		2CBE30DA1EA13C5800589244 /* ProfilePerson.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CBE30D81EA13C5800589244 /* ProfilePerson.storyboard */; };
-		2CBE30DF1EA13D3700589244 /* DSLocalBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE30DC1EA13D3700589244 /* DSLocalBase.m */; };
-		2CBE30E01EA13D3700589244 /* DSPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE30DE1EA13D3700589244 /* DSPerson.m */; };
+		2CBE30E31EA4C46700589244 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE30E21EA4C46700589244 /* ViewController.m */; };
+		2CBE30E91EA4C48500589244 /* DSLocalBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE30E61EA4C48500589244 /* DSLocalBase.m */; };
+		2CBE30EA1EA4C48500589244 /* DSPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE30E81EA4C48500589244 /* DSPerson.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,13 +36,13 @@
 		2CBE306A1EA0C70200589244 /* DSTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSTableViewCell.m; sourceTree = "<group>"; };
 		2CBE306D1EA0C85500589244 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		2CBE306E1EA0C85500589244 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		2CBE30D51EA13C2100589244 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = DSTableViewController/Views/ViewController.h; sourceTree = SOURCE_ROOT; };
-		2CBE30D61EA13C2100589244 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = DSTableViewController/Views/ViewController.m; sourceTree = SOURCE_ROOT; };
 		2CBE30D91EA13C5800589244 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ProfilePerson.storyboard; sourceTree = "<group>"; };
-		2CBE30DB1EA13D3700589244 /* DSLocalBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DSLocalBase.h; path = Models/DSLocalBase.h; sourceTree = "<group>"; };
-		2CBE30DC1EA13D3700589244 /* DSLocalBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DSLocalBase.m; path = Models/DSLocalBase.m; sourceTree = "<group>"; };
-		2CBE30DD1EA13D3700589244 /* DSPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DSPerson.h; path = Models/DSPerson.h; sourceTree = "<group>"; };
-		2CBE30DE1EA13D3700589244 /* DSPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DSPerson.m; path = Models/DSPerson.m; sourceTree = "<group>"; };
+		2CBE30E11EA4C46700589244 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		2CBE30E21EA4C46700589244 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2CBE30E51EA4C48500589244 /* DSLocalBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSLocalBase.h; sourceTree = "<group>"; };
+		2CBE30E61EA4C48500589244 /* DSLocalBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSLocalBase.m; sourceTree = "<group>"; };
+		2CBE30E71EA4C48500589244 /* DSPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSPerson.h; sourceTree = "<group>"; };
+		2CBE30E81EA4C48500589244 /* DSPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSPerson.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,10 +75,7 @@
 		2CBE301E1E9CECB400589244 /* DSTableViewController */ = {
 			isa = PBXGroup;
 			children = (
-				2CBE30DB1EA13D3700589244 /* DSLocalBase.h */,
-				2CBE30DC1EA13D3700589244 /* DSLocalBase.m */,
-				2CBE30DD1EA13D3700589244 /* DSPerson.h */,
-				2CBE30DE1EA13D3700589244 /* DSPerson.m */,
+				2CBE30E41EA4C48500589244 /* Models */,
 				2CBE30661EA0C70200589244 /* UI */,
 				2CBE30221E9CECB400589244 /* AppDelegate.h */,
 				2CBE30231E9CECB400589244 /* AppDelegate.m */,
@@ -103,8 +100,8 @@
 		2CBE30661EA0C70200589244 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				2CBE30D51EA13C2100589244 /* ViewController.h */,
-				2CBE30D61EA13C2100589244 /* ViewController.m */,
+				2CBE30E11EA4C46700589244 /* ViewController.h */,
+				2CBE30E21EA4C46700589244 /* ViewController.m */,
 				2CBE306D1EA0C85500589244 /* MainViewController.h */,
 				2CBE306E1EA0C85500589244 /* MainViewController.m */,
 				2CBE30671EA0C70200589244 /* DSPersonTableViewCell.h */,
@@ -113,6 +110,17 @@
 				2CBE306A1EA0C70200589244 /* DSTableViewCell.m */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		2CBE30E41EA4C48500589244 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2CBE30E51EA4C48500589244 /* DSLocalBase.h */,
+				2CBE30E61EA4C48500589244 /* DSLocalBase.m */,
+				2CBE30E71EA4C48500589244 /* DSPerson.h */,
+				2CBE30E81EA4C48500589244 /* DSPerson.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,14 +196,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CBE30D71EA13C2100589244 /* ViewController.m in Sources */,
+				2CBE30E31EA4C46700589244 /* ViewController.m in Sources */,
 				2CBE306F1EA0C85500589244 /* MainViewController.m in Sources */,
+				2CBE30E91EA4C48500589244 /* DSLocalBase.m in Sources */,
+				2CBE30EA1EA4C48500589244 /* DSPerson.m in Sources */,
 				2CBE30241E9CECB400589244 /* AppDelegate.m in Sources */,
-				2CBE30E01EA13D3700589244 /* DSPerson.m in Sources */,
 				2CBE30211E9CECB400589244 /* main.m in Sources */,
 				2CBE306C1EA0C70200589244 /* DSTableViewCell.m in Sources */,
 				2CBE306B1EA0C70200589244 /* DSPersonTableViewCell.m in Sources */,
-				2CBE30DF1EA13D3700589244 /* DSLocalBase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
