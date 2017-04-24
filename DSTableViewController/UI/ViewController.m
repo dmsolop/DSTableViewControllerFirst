@@ -173,21 +173,20 @@ static const CGFloat DSAnimationDuration = 0.5;
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    BOOL isText = ([textField isEqual:self.firstNameField] || [textField isEqual:self.lastNameField] || [textField isEqual:self.countryField]);
+    NSCharacterSet *set = isText ? [NSCharacterSet letterCharacterSet] : [NSCharacterSet decimalDigitCharacterSet];
+    if (![string componentsSeparatedByCharactersInSet:[set invertedSet]].count) {
+        return NO;
+    }
     
-    if ([textField isEqual:self.firstNameField] || [textField isEqual:self.lastNameField] || [textField isEqual:self.countryField]) {
-        NSCharacterSet *validationSet = [[NSCharacterSet letterCharacterSet] invertedSet];
-        NSArray *components = [string componentsSeparatedByCharactersInSet:validationSet];
-        if ([components count] > 1) return NO;
-        NSString *resultString = [textField.text stringByReplacingCharactersInRange:range withString:string];
+    NSString *resultString = [textField.text stringByReplacingCharactersInRange:range withString:string];
+    if (isText) {
         return [resultString length] <= 30;
     } else {
-        NSCharacterSet *validationSet = [[NSCharacterSet decimalDigitCharacterSet] invertedSet];
-        NSArray *components = [string componentsSeparatedByCharactersInSet:validationSet];
-        if ([components count] > 1) return NO;
-        NSString *resultString = [textField.text stringByReplacingCharactersInRange:range withString:string];
         NSInteger ageRange = [resultString integerValue];
-        if (ageRange < 0 || ageRange > 150 || [resultString length] > 3) return NO;
+        return !(ageRange < 0 || ageRange > 150);
     }
+    
     return YES;
 }
 
