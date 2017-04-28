@@ -20,6 +20,7 @@ static const CGFloat DSAnimationDuration = 0.5;
 @property (strong, nonatomic) NSDate *dateOfBirth;
 @property (strong, nonatomic) NSArray *countriesArray;
 @property (strong, nonatomic) NSString *selectedCountry;
+@property (strong, nonatomic) DSLocalBase *base;
 
 @property (weak, nonatomic) IBOutlet UIView *countryPickerView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraintCountryView;
@@ -34,9 +35,7 @@ static const CGFloat DSAnimationDuration = 0.5;
 
 @end
 
-@implementation ViewController{
-    DSLocalBase *base;
-}
+@implementation ViewController
 
 #pragma mark - InitializationView
 
@@ -80,15 +79,16 @@ static const CGFloat DSAnimationDuration = 0.5;
 }
 
 - (IBAction)actionButton:(UIButton *)sender {
-    base = [DSLocalBase singleToneLocalBase];
-    base.firstName = self.firstNameField.text;
-    base.lastName = self.lastNameField.text;
-    base.sex = self.sexField.text;
-    base.country = self.countryField.text;
-    base.dateOfBirth = self.dateOfBirth;
-    base.age = fullAge;
-    [base addPersonToList];
-    [self performSegueWithIdentifier:@"ShowMainStoryboard" sender:nil];
+    self.base = [DSLocalBase singleToneLocalBase];
+    self.base.firstName = self.firstNameField.text;
+    self.base.lastName = self.lastNameField.text;
+    self.base.sex = self.sexField.text;
+    self.base.country = self.countryField.text;
+    self.base.dateOfBirth = self.dateOfBirth;
+    self.base.age = fullAge;
+    [self.base addPersonToList];
+    
+   // [self performSegueWithIdentifier:@"ShowMainStoryboard" sender:nil];
 }
 
 - (IBAction)didPushButtonWithBirthday:(id)sender {
@@ -173,20 +173,17 @@ static const CGFloat DSAnimationDuration = 0.5;
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    
-    if ([textField isEqual:self.firstNameField] || [textField isEqual:self.lastNameField] || [textField isEqual:self.countryField]) {
-        NSCharacterSet *validationSet = [[NSCharacterSet letterCharacterSet] invertedSet];
-        NSArray *components = [string componentsSeparatedByCharactersInSet:validationSet];
-        if ([components count] > 1) return NO;
-        NSString *resultString = [textField.text stringByReplacingCharactersInRange:range withString:string];
+    BOOL isText = ([textField isEqual:self.firstNameField] || [textField isEqual:self.lastNameField]);
+    NSCharacterSet *set = isText ? [NSCharacterSet letterCharacterSet] : [NSCharacterSet decimalDigitCharacterSet];
+    if ([string componentsSeparatedByCharactersInSet:[set invertedSet]].count > 1) {
+        return NO;
+    }
+    NSString *resultString = [textField.text stringByReplacingCharactersInRange:range withString:string];
+    if (isText) {
         return [resultString length] <= 30;
     } else {
-        NSCharacterSet *validationSet = [[NSCharacterSet decimalDigitCharacterSet] invertedSet];
-        NSArray *components = [string componentsSeparatedByCharactersInSet:validationSet];
-        if ([components count] > 1) return NO;
-        NSString *resultString = [textField.text stringByReplacingCharactersInRange:range withString:string];
         NSInteger ageRange = [resultString integerValue];
-        if (ageRange < 0 || ageRange > 150 || [resultString length] > 3) return NO;
+        return !(ageRange < 0 || ageRange > 150);
     }
     return YES;
 }

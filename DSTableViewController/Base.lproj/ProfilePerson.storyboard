@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NzE-Cn-83b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NzE-Cn-83b">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -315,20 +315,11 @@
                         <outletCollection property="textFields" destination="QcI-0T-HV4" id="sDM-W1-sFX"/>
                         <outletCollection property="textFields" destination="mCN-0P-owC" id="5Ng-m1-r9Z"/>
                         <outletCollection property="textFields" destination="2Vh-a7-o0B" id="cj3-Z0-rxJ"/>
-                        <segue destination="NFr-zi-X2C" kind="show" identifier="ShowMainStoryboard" id="lei-m0-AtN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fX0-Fx-5jx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-324.375" y="114.08450704225352"/>
-        </scene>
-        <!--Main-->
-        <scene sceneID="eDF-TW-BTA">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Main" id="NFr-zi-X2C" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="S92-0y-gct" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="141" y="-360"/>
         </scene>
     </scenes>
 </document>
