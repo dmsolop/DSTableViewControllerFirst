@@ -173,20 +173,13 @@ static const CGFloat DSAnimationDuration = 0.5;
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-<<<<<<< HEAD
+
     BOOL isText = ([textField isEqual:self.firstNameField] || [textField isEqual:self.lastNameField]);
     NSCharacterSet *set = isText ? [NSCharacterSet letterCharacterSet] : [NSCharacterSet decimalDigitCharacterSet];
     if ([string componentsSeparatedByCharactersInSet:[set invertedSet]].count > 1) {
         return NO;
     }
-=======
-    BOOL isText = ([textField isEqual:self.firstNameField] || [textField isEqual:self.lastNameField] || [textField isEqual:self.countryField]);
-    NSCharacterSet *set = isText ? [NSCharacterSet letterCharacterSet] : [NSCharacterSet decimalDigitCharacterSet];
-    if (![string componentsSeparatedByCharactersInSet:[set invertedSet]].count) {
-        return NO;
-    }
-    
->>>>>>> 327d42f18aaf9e2bca1b7fc3b0d9446cdb4ae3b8
+
     NSString *resultString = [textField.text stringByReplacingCharactersInRange:range withString:string];
     if (isText) {
         return [resultString length] <= 30;
