@@ -29,8 +29,7 @@
     return base;
 }
 
-- (void) addPersonToList {
-    DSPerson *person = [DSPerson new];
+- (void) addPersonToList:(DSPerson *)person {
     person.firstName = self.firstName;
     person.lastName = self.lastName;
     person.sex = self.sex;

@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="3Xa-x4-PAN">
             <objects>
-                <viewController id="NzE-Cn-83b" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="NzE-Cn-83b" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MhK-Ay-gOa"/>
                         <viewControllerLayoutGuide type="bottom" id="HJ8-0g-C0G"/>
@@ -279,7 +279,6 @@
                                     <constraint firstItem="EaB-e2-Bic" firstAttribute="leading" secondItem="TY9-L8-PkX" secondAttribute="leading" id="k9P-GU-Xyv"/>
                                     <constraint firstAttribute="trailing" secondItem="xUk-8j-MSn" secondAttribute="trailing" id="kc6-xN-lbw"/>
                                     <constraint firstItem="xUk-8j-MSn" firstAttribute="top" secondItem="TY9-L8-PkX" secondAttribute="top" id="sHa-XV-4jZ"/>
-                                    <constraint firstAttribute="width" constant="320" id="zfP-qo-ibk"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -289,9 +288,11 @@
                             <constraint firstItem="Iv3-CG-deW" firstAttribute="top" secondItem="orX-wa-9la" secondAttribute="top" id="51m-B4-RTY"/>
                             <constraint firstAttribute="trailing" secondItem="Iv3-CG-deW" secondAttribute="trailing" id="6cX-Sw-4KZ"/>
                             <constraint firstAttribute="bottom" secondItem="TY9-L8-PkX" secondAttribute="bottom" id="Ael-IA-j9w"/>
+                            <constraint firstAttribute="trailing" secondItem="TY9-L8-PkX" secondAttribute="trailing" id="FMe-7g-XBL"/>
                             <constraint firstItem="ere-Pt-sCz" firstAttribute="leading" secondItem="orX-wa-9la" secondAttribute="leading" id="JVt-XW-Muj"/>
                             <constraint firstAttribute="bottom" secondItem="ere-Pt-sCz" secondAttribute="bottom" id="Qwc-2m-XQr"/>
                             <constraint firstItem="HJ8-0g-C0G" firstAttribute="top" secondItem="Iv3-CG-deW" secondAttribute="bottom" id="fHL-eZ-5gU"/>
+                            <constraint firstItem="TY9-L8-PkX" firstAttribute="leading" secondItem="orX-wa-9la" secondAttribute="leading" id="kw6-DY-QNa"/>
                             <constraint firstAttribute="trailing" secondItem="ere-Pt-sCz" secondAttribute="trailing" id="lTQ-UU-dBv"/>
                             <constraint firstItem="TY9-L8-PkX" firstAttribute="centerX" secondItem="orX-wa-9la" secondAttribute="centerX" id="u2O-1T-ZaG"/>
                         </constraints>

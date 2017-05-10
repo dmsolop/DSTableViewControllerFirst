@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C5DE0C11EBF816E00BC8F39 /* UIStoryboard+DSExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5DE0C01EBF816E00BC8F39 /* UIStoryboard+DSExtension.m */; };
 		2CBE30211E9CECB400589244 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE30201E9CECB400589244 /* main.m */; };
 		2CBE30241E9CECB400589244 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE30231E9CECB400589244 /* AppDelegate.m */; };
 		2CBE302A1E9CECB400589244 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CBE30281E9CECB400589244 /* Main.storyboard */; };
@@ -22,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C5DE0BF1EBF816E00BC8F39 /* UIStoryboard+DSExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIStoryboard+DSExtension.h"; sourceTree = "<group>"; };
+		2C5DE0C01EBF816E00BC8F39 /* UIStoryboard+DSExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIStoryboard+DSExtension.m"; sourceTree = "<group>"; };
 		2CBE301C1E9CECB400589244 /* DSTableViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DSTableViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CBE30201E9CECB400589244 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2CBE30221E9CECB400589244 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -56,6 +59,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C5DE0BE1EBF814A00BC8F39 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				2C5DE0BF1EBF816E00BC8F39 /* UIStoryboard+DSExtension.h */,
+				2C5DE0C01EBF816E00BC8F39 /* UIStoryboard+DSExtension.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 		2CBE30131E9CECB400589244 = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +112,7 @@
 		2CBE30661EA0C70200589244 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				2C5DE0BE1EBF814A00BC8F39 /* Categories */,
 				2CBE30E11EA4C46700589244 /* ViewController.h */,
 				2CBE30E21EA4C46700589244 /* ViewController.m */,
 				2CBE306D1EA0C85500589244 /* MainViewController.h */,
@@ -202,6 +215,7 @@
 				2CBE30EA1EA4C48500589244 /* DSPerson.m in Sources */,
 				2CBE30241E9CECB400589244 /* AppDelegate.m in Sources */,
 				2CBE30211E9CECB400589244 /* main.m in Sources */,
+				2C5DE0C11EBF816E00BC8F39 /* UIStoryboard+DSExtension.m in Sources */,
 				2CBE306C1EA0C70200589244 /* DSTableViewCell.m in Sources */,
 				2CBE306B1EA0C70200589244 /* DSPersonTableViewCell.m in Sources */,
 			);

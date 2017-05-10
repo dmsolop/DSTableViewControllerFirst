@@ -7,7 +7,9 @@
 //
 
 #import "ViewController.h"
+#import "DSPerson.h"
 #import "DSLocalBase.h"
+
 
 static const CGFloat DSPickersDownPosition = 306.f;
 static const CGFloat DSAnimationDuration = 0.5;
@@ -20,6 +22,7 @@ static const CGFloat DSAnimationDuration = 0.5;
 @property (strong, nonatomic) NSDate *dateOfBirth;
 @property (strong, nonatomic) NSArray *countriesArray;
 @property (strong, nonatomic) NSString *selectedCountry;
+@property (strong, nonatomic) DSPerson *person;
 @property (strong, nonatomic) DSLocalBase *base;
 
 @property (weak, nonatomic) IBOutlet UIView *countryPickerView;
@@ -54,6 +57,9 @@ static const CGFloat DSAnimationDuration = 0.5;
     for (UITextField * textField in self.textFields){
         textField.delegate = self;
     }
+    self.person = [DSPerson new];
+    self.base = [DSLocalBase new];
+    NSLog(@"ViewController loaded");
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -72,6 +78,10 @@ static const CGFloat DSAnimationDuration = 0.5;
     [self unSubscribToKeyboardNotifications];
 }
 
+- (void)dealloc {
+    NSLog(@"viewController dealocated");
+}
+
 #pragma mark - Actions
 
 - (IBAction)actionSex:(UISwitch *)sender {
@@ -79,16 +89,19 @@ static const CGFloat DSAnimationDuration = 0.5;
 }
 
 - (IBAction)actionButton:(UIButton *)sender {
-    self.base = [DSLocalBase singleToneLocalBase];
-    self.base.firstName = self.firstNameField.text;
-    self.base.lastName = self.lastNameField.text;
-    self.base.sex = self.sexField.text;
-    self.base.country = self.countryField.text;
-    self.base.dateOfBirth = self.dateOfBirth;
-    self.base.age = fullAge;
-    [self.base addPersonToList];
+
+    self.person.firstName = self.firstNameField.text;
+    self.person.lastName = self.lastNameField.text;
+    self.person.sex = self.sexField.text;
+    self.person.country = self.countryField.text;
+    self.person.dateOfBirth = self.dateOfBirth;
+    self.person.age = fullAge;
     
-   // [self performSegueWithIdentifier:@"ShowMainStoryboard" sender:nil];
+    if (self.personBlock) {
+        self.personBlock(self.person);
+    
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 - (IBAction)didPushButtonWithBirthday:(id)sender {
@@ -163,6 +176,9 @@ static const CGFloat DSAnimationDuration = 0.5;
 }
 
 - (void) textFieldDidEndEditing:(UITextField *)textField{
+    
+    
+    
     activeField = nil;
 }
 
@@ -173,20 +189,13 @@ static const CGFloat DSAnimationDuration = 0.5;
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-<<<<<<< HEAD
+    
     BOOL isText = ([textField isEqual:self.firstNameField] || [textField isEqual:self.lastNameField]);
     NSCharacterSet *set = isText ? [NSCharacterSet letterCharacterSet] : [NSCharacterSet decimalDigitCharacterSet];
     if ([string componentsSeparatedByCharactersInSet:[set invertedSet]].count > 1) {
         return NO;
     }
-=======
-    BOOL isText = ([textField isEqual:self.firstNameField] || [textField isEqual:self.lastNameField] || [textField isEqual:self.countryField]);
-    NSCharacterSet *set = isText ? [NSCharacterSet letterCharacterSet] : [NSCharacterSet decimalDigitCharacterSet];
-    if (![string componentsSeparatedByCharactersInSet:[set invertedSet]].count) {
-        return NO;
-    }
-    
->>>>>>> 327d42f18aaf9e2bca1b7fc3b0d9446cdb4ae3b8
+
     NSString *resultString = [textField.text stringByReplacingCharactersInRange:range withString:string];
     if (isText) {
         return [resultString length] <= 30;
@@ -194,9 +203,10 @@ static const CGFloat DSAnimationDuration = 0.5;
         NSInteger ageRange = [resultString integerValue];
         return !(ageRange < 0 || ageRange > 150);
     }
-    
     return YES;
 }
+
+
 
 #pragma mark - UIPickerViewDataSource Methods
 

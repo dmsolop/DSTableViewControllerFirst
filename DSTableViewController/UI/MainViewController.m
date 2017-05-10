@@ -7,10 +7,15 @@
 //
 
 #import "MainViewController.h"
+#import "ViewController.h"
+
 #import "DSPersonTableViewCell.h"
 #import "DSTableViewCell.h"
+
 #import "DSPerson.h"
 #import "DSLocalBase.h"
+
+#import "UIStoryboard+DSExtension.h"
 
 @interface MainViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) NSMutableArray *arrayPersons;
@@ -23,12 +28,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.base = [DSLocalBase singleToneLocalBase];
+    self.base = [DSLocalBase new];
 //    for (int index = 0; index < 50; index++) {
 //        [self.arrayPersons addObject:[DSPerson personInitialiseWithParams]];
 //    }
    }
-
+- (void)dealloc {
+    NSLog(@"mainViewController dealocated");
+}
 
 #pragma mark - UITableViewDataSource Methods
 
@@ -39,7 +46,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row < self.base.listOfPersons.count) {
         NSString* identifier = NSStringFromClass([DSPersonTableViewCell class]);
-        DSPersonTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        DSPersonTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
         DSPerson *person = self.base.listOfPersons[indexPath.row];
         [cell fillThePersonCell:person];
         
@@ -52,10 +59,18 @@
 #pragma mark - UITableViewDelegate Methods
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    //DSLocalBase *base = [DSLocalBase singleToneLocalBase];
     if (indexPath.row == self.base.listOfPersons.count) {
-        [self performSegueWithIdentifier:@"ShowPersonStoryboard" sender:nil];
-        [self.tableView reloadData];
+        ViewController *viewController = [[UIStoryboard anotherStoryboard:@"ProfilePerson"] viewControllerFromClass:[ViewController class]];
+        
+        viewController.personBlock = ^(DSPerson* person){
+            [self.base addPersonToList:person];
+        };
+        
+        [self.navigationController pushViewController:viewController animated:YES];
+        
+
+        
+     //   [self.tableView reloadData];
     }
 }
 
