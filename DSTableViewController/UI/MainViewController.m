@@ -65,12 +65,8 @@
         viewController.personBlock = ^(DSPerson* person){
             [self.base addPersonToList:person];
         };
-        
         [self.navigationController pushViewController:viewController animated:YES];
-        
-
-        
-     //   [self.tableView reloadData];
+        [self.tableView reloadData];
     }
 }
 

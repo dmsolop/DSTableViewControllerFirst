@@ -10,45 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DSTableViewController/UI/MainViewController.m"
-            timestampString = "515935357.424409"
+            timestampString = "516179110.012501"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[MainViewController tableView:didSelectRowAtIndexPath:]"
-                  moduleName = "DSTableViewController"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Dmitriy/Documents/LevelUP_homework/DSTableViewController/DSTableViewController/UI/MainViewController.m"
-                  timestampString = "516029224.477311"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "65"
-                  endingLineNumber = "65"
-                  offsetFromSymbolStart = "357">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__56-[MainViewController tableView:didSelectRowAtIndexPath:]_block_invoke"
-                  moduleName = "DSTableViewController"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Dmitriy/Documents/LevelUP_homework/DSTableViewController/DSTableViewController/UI/MainViewController.m"
-                  timestampString = "516029224.4799"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "65"
-                  endingLineNumber = "65"
-                  offsetFromSymbolStart = "16">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -160,6 +128,22 @@
             startingLineNumber = "99"
             endingLineNumber = "99"
             landmarkName = "-actionButton:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DSTableViewController/Models/DSLocalBase.m"
+            timestampString = "516179258.660015"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "-addPersonToList:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

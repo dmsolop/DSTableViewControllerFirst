@@ -30,12 +30,6 @@
 }
 
 - (void) addPersonToList:(DSPerson *)person {
-    person.firstName = self.firstName;
-    person.lastName = self.lastName;
-    person.sex = self.sex;
-    person.age = self.age;
-    person.dateOfBirth = self.dateOfBirth;
-    person.country = self.country;
     [self.listOfPersons addObject:person];
 }
 
