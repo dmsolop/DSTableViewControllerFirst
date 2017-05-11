@@ -176,9 +176,6 @@ static const CGFloat DSAnimationDuration = 0.5;
 }
 
 - (void) textFieldDidEndEditing:(UITextField *)textField{
-    
-    
-    
     activeField = nil;
 }
 
@@ -189,7 +186,7 @@ static const CGFloat DSAnimationDuration = 0.5;
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    
+
     BOOL isText = ([textField isEqual:self.firstNameField] || [textField isEqual:self.lastNameField]);
     NSCharacterSet *set = isText ? [NSCharacterSet letterCharacterSet] : [NSCharacterSet decimalDigitCharacterSet];
     if ([string componentsSeparatedByCharactersInSet:[set invertedSet]].count > 1) {
