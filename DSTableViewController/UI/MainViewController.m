@@ -61,12 +61,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == self.base.listOfPersons.count) {
         ViewController *viewController = [[UIStoryboard anotherStoryboard:@"ProfilePerson"] viewControllerFromClass:[ViewController class]];
-        
         viewController.personBlock = ^(DSPerson* person){
             [self.base addPersonToList:person];
+            [self.tableView reloadData];
         };
         [self.navigationController pushViewController:viewController animated:YES];
-        [self.tableView reloadData];
     }
 }
 
