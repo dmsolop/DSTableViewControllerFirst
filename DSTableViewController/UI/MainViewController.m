@@ -29,13 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.base = [DSLocalBase new];
-//    for (int index = 0; index < 50; index++) {
-//        [self.arrayPersons addObject:[DSPerson personInitialiseWithParams]];
-//    }
    }
-- (void)dealloc {
-    NSLog(@"mainViewController dealocated");
-}
 
 #pragma mark - UITableViewDataSource Methods
 

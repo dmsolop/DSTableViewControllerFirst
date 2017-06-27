@@ -33,10 +33,10 @@
 		2CBE302B1E9CECB400589244 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CBE302E1E9CECB400589244 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CBE30301E9CECB400589244 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2CBE30671EA0C70200589244 /* DSPersonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSPersonTableViewCell.h; sourceTree = "<group>"; };
-		2CBE30681EA0C70200589244 /* DSPersonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSPersonTableViewCell.m; sourceTree = "<group>"; };
-		2CBE30691EA0C70200589244 /* DSTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSTableViewCell.h; sourceTree = "<group>"; };
-		2CBE306A1EA0C70200589244 /* DSTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSTableViewCell.m; sourceTree = "<group>"; };
+		2CBE30671EA0C70200589244 /* DSPersonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DSPersonTableViewCell.h; path = ../DSPersonTableViewCell.h; sourceTree = "<group>"; };
+		2CBE30681EA0C70200589244 /* DSPersonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DSPersonTableViewCell.m; path = ../DSPersonTableViewCell.m; sourceTree = "<group>"; };
+		2CBE30691EA0C70200589244 /* DSTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DSTableViewCell.h; path = ../DSTableViewCell.h; sourceTree = "<group>"; };
+		2CBE306A1EA0C70200589244 /* DSTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DSTableViewCell.m; path = ../DSTableViewCell.m; sourceTree = "<group>"; };
 		2CBE306D1EA0C85500589244 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		2CBE306E1EA0C85500589244 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		2CBE30D91EA13C5800589244 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ProfilePerson.storyboard; sourceTree = "<group>"; };
@@ -59,13 +59,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		041F9D0A1EF6DF740064C022 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2CBE30691EA0C70200589244 /* DSTableViewCell.h */,
+				2CBE306A1EA0C70200589244 /* DSTableViewCell.m */,
+				2CBE30671EA0C70200589244 /* DSPersonTableViewCell.h */,
+				2CBE30681EA0C70200589244 /* DSPersonTableViewCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		2C5DE0BE1EBF814A00BC8F39 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
 				2C5DE0BF1EBF816E00BC8F39 /* UIStoryboard+DSExtension.h */,
 				2C5DE0C01EBF816E00BC8F39 /* UIStoryboard+DSExtension.m */,
 			);
-			path = Categories;
+			name = Categories;
+			path = UI/Categories;
 			sourceTree = "<group>";
 		};
 		2CBE30131E9CECB400589244 = {
@@ -88,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				2CBE30E41EA4C48500589244 /* Models */,
+				2C5DE0BE1EBF814A00BC8F39 /* Categories */,
 				2CBE30661EA0C70200589244 /* UI */,
 				2CBE30221E9CECB400589244 /* AppDelegate.h */,
 				2CBE30231E9CECB400589244 /* AppDelegate.m */,
@@ -112,15 +125,11 @@
 		2CBE30661EA0C70200589244 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				2C5DE0BE1EBF814A00BC8F39 /* Categories */,
 				2CBE30E11EA4C46700589244 /* ViewController.h */,
 				2CBE30E21EA4C46700589244 /* ViewController.m */,
 				2CBE306D1EA0C85500589244 /* MainViewController.h */,
 				2CBE306E1EA0C85500589244 /* MainViewController.m */,
-				2CBE30671EA0C70200589244 /* DSPersonTableViewCell.h */,
-				2CBE30681EA0C70200589244 /* DSPersonTableViewCell.m */,
-				2CBE30691EA0C70200589244 /* DSTableViewCell.h */,
-				2CBE306A1EA0C70200589244 /* DSTableViewCell.m */,
+				041F9D0A1EF6DF740064C022 /* Cells */,
 			);
 			path = UI;
 			sourceTree = "<group>";

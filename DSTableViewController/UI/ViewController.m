@@ -59,7 +59,6 @@ static const CGFloat DSAnimationDuration = 0.5;
     }
     self.person = [DSPerson new];
     self.base = [DSLocalBase new];
-    NSLog(@"ViewController loaded");
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -233,20 +232,27 @@ static const CGFloat DSAnimationDuration = 0.5;
     [UIView animateWithDuration:DSAnimationDuration animations:^{
         self.scrollView.contentInset = UIEdgeInsetsZero;
         [self.view layoutIfNeeded];
+        self.scrollView.contentOffset = CGPointZero;
     }];
 }
 
 - (void) pickersShow {
+    self.bottomConstraintCountryView.constant = - DSPickersDownPosition;
+    self.bottomConstraintDateView.constant = - DSPickersDownPosition;
+    BOOL isAgeActive = [activeField isEqual:self.ageField];
+    UIView *activeSubView = isAgeActive ? self.datePickerView : self.countryPickerView;
+
     [UIView animateWithDuration:DSAnimationDuration animations:^{
         self.scrollView.contentInset = UIEdgeInsetsMake(0, 0, DSPickersDownPosition - 100, 0);
         [self.scrollView scrollRectToVisible:CGRectMake(self.scrollView.contentSize.width - 1,
                                                         self.scrollView.contentSize.height - 1, 1, 1) animated:YES];
+        [activeSubView layoutIfNeeded];
+
     }];
-        [activeField isEqual:self.ageField] ?
-    (self.bottomConstraintDateView.constant = 0,
-     self.bottomConstraintCountryView.constant = - DSPickersDownPosition) :
-    (self.bottomConstraintCountryView.constant = 0,
-     self.bottomConstraintDateView.constant = - DSPickersDownPosition);
+
+    [self.view bringSubviewToFront:activeSubView];
+    self.bottomConstraintDateView.constant = isAgeActive ? 0 : - DSPickersDownPosition;
+    self.bottomConstraintCountryView.constant = isAgeActive ? - DSPickersDownPosition : 0;
     
 }
 
